@@ -15,7 +15,7 @@ const ExpandCollapse = () => {
                         px-2
                         mb-4
                         " 
-                    >{isOpen?'Expand':'Collapse'}</button>
+                    >{isOpen?'Collapse':'Expand'}</button>
           {isOpen?(
               <img 
               className='rounded-lg'
