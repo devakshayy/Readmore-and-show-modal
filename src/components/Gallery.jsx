@@ -4,14 +4,14 @@ import { sculptureList } from "./GalleryData";
 const Gallery = () => {
   const [index, setIndex] = useState(0);
   const [showMore, setShowMore] = useState(false);
-  const hasNext = index < sculptureList.length - 1;
+  const hasNext = index < sculptureList.length -1;
 
   const handleNext = () => {
-    hasNext ? setIndex(index + 1) : setIndex(0);
+     hasNext ? setIndex(index + 1) : setIndex(0);
   };
 
-  const handleMoreClick = () => {
-    setShowMore(!showMore);
+  const handleShowMore = () => {
+     setShowMore(!showMore);
   };
 
   let sculpture = sculptureList[index];
@@ -33,13 +33,13 @@ const Gallery = () => {
         </button>
         <h2>
           {" "}
-          <i>{sculpture.name}</i> By {sculpture.artist}
+           <i className="font-bold">{sculpture.name}</i> By {sculpture.artist}
         </h2>
         <h3>
           ({index + 1} of {sculptureList.length})
         </h3>
         <button
-          onClick={handleMoreClick}
+          onClick={handleShowMore}
           className="border-4
                      rounded-lg
                     border-blue-500
@@ -49,10 +49,10 @@ const Gallery = () => {
                     px-2
                     "
         >
-          {showMore ? "Hide" : "Show"} Details
+          {showMore ? 'Hide': 'Show'} Details
         </button>
         <div className="w-[900px] h-[300px] flex flex-col items-center gap-3">
-          {showMore && <p className="text-center">{sculpture.description}</p>}
+           {showMore && <p className="text-center">{sculpture.description}</p>}
           <img
             className="rounded-lg"
             src={sculpture.url}
