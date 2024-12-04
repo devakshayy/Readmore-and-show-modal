@@ -4,7 +4,7 @@ const ExpandCollapse = () => {
     const [isOpen,setIsOpen] = useState(false);
   return (
     <div className="min-h-screen bg-slate-800  w-1/2  p-4">
-        <div class="border border-white bg-gray-800 p-4 rounded-lg">
+        <div className="border border-white bg-gray-800 p-4 rounded-lg">
             <button 
                onClick={() => setIsOpen(!isOpen)}
                 className="border-2

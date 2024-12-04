@@ -27,7 +27,7 @@ const Profile = ({profile}) => {
     const [profileOpen,setProfileOpen] = useState(false);
 
   return (
-    <div class="border border-white bg-gray-800 p-4 rounded-lg ">
+    <div className="border border-white bg-gray-800 p-4 rounded-lg ">
          <button 
                 onClick={() => setProfileOpen(!profileOpen)}
                 className="border-2
