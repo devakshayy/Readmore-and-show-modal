@@ -5,10 +5,15 @@ const Gallery = () => {
   const [index, setIndex] = useState(0);
   const [showMore, setShowMore] = useState(false);
   const hasNext = index < sculptureList.length -1;
+  const hasPrev = index > 0;
 
   const handleNext = () => {
      hasNext ? setIndex(index + 1) : setIndex(0);
   };
+
+  const handlePrevious = () => {
+    hasPrev ? setIndex(index - 1) : setIndex(sculptureList.length -1);
+  }
 
   const handleShowMore = () => {
      setShowMore(!showMore);
@@ -18,6 +23,21 @@ const Gallery = () => {
   return (
     <>
       <div className="w-full min-h-screen bg-gray-800 p-4 flex flex-col items-center text-white gap-2">
+      <div>
+      <button
+          onClick={handlePrevious}
+          className="border-4
+                     rounded-lg
+                    border-blue-500
+                    bg-slate-500
+                    font-bold
+                    text-black
+                    px-2
+                    mr-2
+                    "
+        >
+          Previous
+        </button>
         <button
           onClick={handleNext}
           className="border-4
@@ -31,6 +51,7 @@ const Gallery = () => {
         >
           Next
         </button>
+      </div>
         <h2>
           {" "}
            <i className="font-bold">{sculpture.name}</i> By {sculpture.artist}
